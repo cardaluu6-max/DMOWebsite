@@ -1,0 +1,50 @@
+.navbar {
+    background-color: forestgreen;
+    padding: 2.0rem;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    z-index: 1000;
+    left: 0;
+    gap: 3rem;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.salugFont h2 {
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 250%;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 3rem; 
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    margin-top: 1%;
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 150%;
+}
