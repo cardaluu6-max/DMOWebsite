@@ -13,6 +13,7 @@
 body, html {
     margin: 0;
     padding: 0;
+    overflow-y: scroll;
 }
 
 * {
@@ -47,4 +48,17 @@ body, html {
     cursor: pointer;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 150%;
+}
+
+.bg1 {
+    width: 100%;
+    overflow: hidden;
+}
+
+.bg1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%;
+    object-fit: contain;
 }
