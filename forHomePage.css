@@ -1,45 +1,62 @@
-.navbar {
-    background-color: darkgreen;
-    padding: 2.0rem;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    display: flex;
-    z-index: 1000;
-    left: 0;
-    gap: 3rem;
-}
-
-body, html {
-    margin: 0;
-    padding: 0;
-    overflow-y: scroll;
-}
-
+/* 1. Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.navbar {
+    /* This creates the dark-to-transparent shadow effect at the top */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    
+    padding: 2.0rem 2.0rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4rem;
+    z-index: 1000;
+    transition: all 0.4s ease-in-out;
+}
+
+/* 3. Navbar Scrolled State (Solid Green - Removes Gradient) */
+.navbar.scrolled {
+    background: #228B22; /* 'background' shorthand ensures the gradient is removed */
+    padding: 0.8rem 2.0rem;    
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 4. Logo / Title Styling */
 .salugFont h2 {
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 250%;
+    font-size: 2.5rem;
+    transition: font-size 0.4s ease;
+    white-space: nowrap;
 }
 
+.navbar.scrolled .salugFont h2 {
+    font-size: 1.8rem;
+}
+
+/* 5. Navigation List Styling */
 .navbar ul {
     display: flex;
     list-style: none;
-    gap: 3rem; 
+    gap: 2.5rem; 
     margin: 0;
     padding: 0;
     align-items: center;
-    margin-top: 1%;
-}
-
-.navbar li {
-    display: inline-block;
 }
 
 .navbar a {
@@ -47,18 +64,39 @@ body, html {
     color: white;
     cursor: pointer;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 150%;
+    font-size: 1.2rem;
+    transition: opacity 0.3s ease, font-size 0.4s ease;
 }
 
+.navbar.scrolled a {
+    font-size: 1.1rem;
+}
+
+.navbar a:hover {
+    opacity: 0.7;
+}
+
+/* 6. FIXED Background Image Effect */
 .bg1 {
     width: 100%;
-    overflow: hidden;
+    height: 100vh;
+    position: fixed; /* This makes the image "stay put" */
+    top: 0;
+    left: 0;
+    z-index: -1;      /* This places the image behind your sections */
+    display: block;
+    object-fit: cover;
+    object-position: center;
 }
 
-.bg1 img {
-    width: 100%;
-    height: auto;
-    display: block;
-    max-width: 100%;
-    object-fit: contain;
+/* 7. Content Sections */
+/* This targets the first section after your background image */
+.bg1 + section {
+    margin-top: 100vh; /* Pushes the content down to reveal the image initially */
+}
+
+section {
+    position: relative;
+    z-index: 1; /* Ensures sections stay on top of the fixed image */
+    /* background-color is handled in your HTML inline styles */
 }
