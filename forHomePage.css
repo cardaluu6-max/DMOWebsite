@@ -1,4 +1,5 @@
-/* 1. Global Reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -31,7 +32,7 @@ body, html {
 
 /* 3. Navbar Scrolled State (Solid Green - Removes Gradient) */
 .navbar.scrolled {
-    background: #228B22; /* 'background' shorthand ensures the gradient is removed */
+    background: #377A3C; /* 'background' shorthand ensures the gradient is removed */
     padding: 0.8rem 2.0rem;    
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -97,6 +98,26 @@ body, html {
 
 section {
     position: relative;
-    z-index: 1; /* Ensures sections stay on top of the fixed image */
-    /* background-color is handled in your HTML inline styles */
+    z-index: 1; 
+}
+
+.aboutSection {
+    padding: 4rem 2rem; 
+    background-color: white; 
+    min-height: 100vh;
+}
+
+.aboutdiv {
+    text-align: center;
+}
+
+.h1AboutText {
+    font-size: 3rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.para1About {
+    font-size: 1.8rem;
+    font-family: "Poppins", sans-serif;
+    margin-top: 2rem;
 }
